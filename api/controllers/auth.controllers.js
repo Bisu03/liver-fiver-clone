@@ -3,6 +3,11 @@ import User from "../models/user.model.js"
 import jwt from "jsonwebtoken"
 import createError from "../utils/createError.js";
 
+/**
+ * @function register
+ * @description for user registration.
+ * @return {message}
+ */
 export const register = async (req, res, next) => {
     try {
         const { username,
@@ -28,6 +33,7 @@ export const register = async (req, res, next) => {
     }
 
 }
+
 export const login = async (req, res, next) => {
     try {
         const user = await User.findOne({ username: req.body.username })
@@ -52,6 +58,7 @@ export const login = async (req, res, next) => {
     }
 
 }
+
 export const logout = async (req, res) => {
 
     res

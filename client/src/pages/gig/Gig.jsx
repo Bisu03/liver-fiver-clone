@@ -32,6 +32,10 @@ function Gig() {
     enabled: !!userId,
   });
 
+
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  console.log(currentUser);
+
   return (
     <div className="gig">
       {isLoading ? (
@@ -149,9 +153,9 @@ function Gig() {
               </div>
             </div>
             <div className="features">{data.features}</div>
-            <Link to={`/pay/${id}`}>
-              <button>Continue</button>
-            </Link>
+           {!currentUser?.isSeller && <Link to={`/pay/${id}`}>
+              <button>Buy</button>
+            </Link>}
           </div>
         </div>
       )}
