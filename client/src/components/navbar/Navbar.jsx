@@ -31,6 +31,7 @@ function Navbar() {
       await newRequest.post("/auth/logout");
       localStorage.removeItem("currentUser");
       navigate("/");
+      location.reload()
     } catch (err) {
       console.log(err);
     }

@@ -34,6 +34,11 @@ export const register = async (req, res, next) => {
 
 }
 
+/**
+ * @function login
+ * @description for user login.
+ * @return {message}
+ */
 export const login = async (req, res, next) => {
     try {
         const user = await User.findOne({ username: req.body.username })
@@ -59,6 +64,11 @@ export const login = async (req, res, next) => {
 
 }
 
+/**
+ * @function logout
+ * @description for user logout.
+ * @return {token}
+ */
 export const logout = async (req, res) => {
 
     res
